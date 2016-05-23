@@ -1,0 +1,102 @@
+$radius: 6px;
+$board: #333;
+$cell: #eee;
+$teal: #0cb;
+
+@mixin border-box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+@mixin background-trans {
+	-webkit-transition: background 0.6s;
+	-moz-transition: background 0.6s;
+	-o-transition: background 0.6s;
+    transition: background 0.6s;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	text-align: center;
+}
+
+#main {
+	margin: 50px auto;
+}
+
+#messages {
+    position: relative;
+    height: 130px;
+    width: 40%; 
+    padding: 10px;
+    margin-left: 30%;
+    font-size: 2em;
+}
+#game-over {
+	height: 90px;
+	width: 100%;
+	h2 {
+		font-size: 1.25em;
+		display: none;
+		margin: 0;
+	}
+}
+
+#score {
+	height: 40px;
+	width: 100%;
+	clear: both;
+}
+
+#x-score {
+  float: left;
+}
+#o-score {
+  float: right;
+}
+
+#tic-tac-toe {
+	position: relative;
+	margin-left: 30%;
+	width: 40%;
+	padding: 1%;
+	padding-bottom: 41%;
+	background: $board url("images/ui-bg_diagonals-thick_8_333333_40x40.png") 50% 50% repeat;
+	border: 1px solid $board;
+	border-radius: $radius;
+}
+
+.cell {
+	@include background-trans;
+}
+
+.cell {
+	@include border-box;
+	float: left;
+	margin: 1.1%;
+	width: 31%;
+	padding-bottom: 30%;
+	background-color: $cell;
+	border: 2px solid black;
+	border-radius: $radius;
+	&:hover {
+		background-color: darken($cell, 20%);
+	}
+}
+
+.x {
+	background: red url("images/x.png") 0% 0%/cover no-repeat;
+	&:hover {
+		background-color: darken(red, 20%);
+	}
+}
+
+.o {
+	background: $teal url("images/o.png") 0% 0%/cover no-repeat;
+	&:hover {
+		background-color: darken($teal, 20%);
+	}
+}
+

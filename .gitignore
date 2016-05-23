@@ -1,0 +1,5 @@
+images/*
+test.html
+tic-tac-toe.css.map
+.sass-cache/
+.sass-cache/*
